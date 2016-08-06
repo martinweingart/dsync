@@ -1,0 +1,16 @@
+Script en Python para sincronizar dos carpetas
+
+Uso
+---
+dsync fuente destino [parametros]
+
+Parámetros
+----------
+-a --add  Agregar archivos nuevos en destino (que no estaban todavía)
+-u --update Actualizar archivos en destino (que ya existían)
+-f --force  Eliminar archivos de destino que no están en fuente
+-v --verbose  Mostrar mensajes de las acciones realizadas
+
+Ejemplo
+-------
+dsync /home/tincho /media/tincho -v
