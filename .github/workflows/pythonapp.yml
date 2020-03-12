@@ -26,4 +26,4 @@ jobs:
     - name: Check
       run:
         value=`git status --porcelain`
-        echo value       
+        echo $value 
