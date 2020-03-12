@@ -27,6 +27,5 @@ jobs:
         export FOO=`git status --porcelain`
         echo "::set-env name=FOO::$FOO"
     - name: Check
-      if: $FOO == ''
       run:
-        echo 'hola' 
+        echo $FOO
