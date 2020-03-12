@@ -23,10 +23,10 @@ jobs:
     - name: Test
       run: |
         python echo.py
-    - name: Define empty
-      run:
-        checkEmpty=`git status --porcelain`
+    - run: |
+        export FOO=`git status --porcelain`
+        echo "::set-env name=FOO::$FOO"
     - name: Check
-      if: $checkEmpty == ''
+      if: $FOO == ''
       run:
-        echo 'hola'    
+        echo 'hola' 
