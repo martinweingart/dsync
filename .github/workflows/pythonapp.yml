@@ -24,6 +24,6 @@ jobs:
       run: |
         python echo.py
     - name: Check
-      if: git status --porcelain == ''
       run:
-        echo 'Hola'        
+        value=`git status --porcelain`
+        echo value       
