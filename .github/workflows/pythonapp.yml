@@ -23,7 +23,10 @@ jobs:
     - name: Test
       run: |
         python echo.py
-    - name: Check
+    - name: Define empty
       run:
-        value=`git status --porcelain`
-        echo $value 
+        checkEmpty=`git status --porcelain`
+    - name: Check
+      if: $checkEmpty == ''
+      run:
+        echo 'hola'    
