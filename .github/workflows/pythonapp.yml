@@ -23,7 +23,9 @@ jobs:
     - name: Test
       run: |
         python echo.py
+    - run: |
+        export FOO=`git status --porcelain`
+        echo "::set-env name=FOO::$FOO"
     - name: Check
-      if: git status --porcelain == ''
       run:
-        echo 'Hola'        
+        echo $FOO
